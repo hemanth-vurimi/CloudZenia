@@ -36,4 +36,4 @@ jobs:
         docker tag $ECR_REPOSITORY:$IMAGE_TAG 202533539871.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
         
         # Push the Docker image to ECR
-        docker push 202533539871.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push 202533539871.dkr.ecr.ap-south-1.amazonaws.com/default/cloudzenia:latest
