@@ -26,14 +26,14 @@ jobs:
 
     - name: Build, Tag, and Push Docker Image
       env:
-        ECR_REPOSITORY: 202533539871.dkr.ecr.ap-south-1.amazonaws.com/default/cloudzenia
+        ECR_REPOSITORY: default/cloudzenia
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build the Docker image
         docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
-        
+
         # Tag the Docker image for ECR
         docker tag $ECR_REPOSITORY:$IMAGE_TAG 202533539871.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
-        
+
         # Push the Docker image to ECR
-        docker push 202533539871.dkr.ecr.ap-south-1.amazonaws.com/default/cloudzenia:latest
+        docker push 202533539871.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
