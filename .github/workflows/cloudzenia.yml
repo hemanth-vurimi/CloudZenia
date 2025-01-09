@@ -26,7 +26,7 @@ jobs:
         docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
         
         # Tag the Docker image for ECR
-        docker tag $ECR_REPOSITORY:$IMAGE_TAG <202533539871>.dkr.ecr.<region>.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+        docker tag $ECR_REPOSITORY:$IMAGE_TAG <202533539871>.dkr.ecr.<ap-south-1>.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
         
         # Push the Docker image to ECR
-        docker push <202533539871>.dkr.ecr.<region>.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push <202533539871>.dkr.ecr.<p-south-1amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
